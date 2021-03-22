@@ -24,10 +24,22 @@
 
 
           <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-home"></i>
+            <a href="<?php BASE_URL.'Usuarios/Home'?>" class="nav-link">
+              <i class="nav-icon fas fa-home"></i> 
               <p>
                 Administracion de usuarios
+                
+              </p>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a href="<?php BASE_URL.'/Logout'?>" class="nav-link">
+              <i class="nav-icon fas fa-power-off"></i>
+              <p>
+                Cerrar sesion
                 
               </p>
             </a>
