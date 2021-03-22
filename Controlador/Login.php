@@ -28,6 +28,11 @@
                         if($arrData['activo'] == 1){
                             $_SESSION['idusuario'] = $arrData['id_usuario'];
                             $_SESSION['login'] = true;
+                            $_SESSION['userData'] = $arrData;
+
+                            $arrData = $this->model->sessionLogin($_SESSION['idusuario']);
+                            $_SESSION['userData'] = $arrData;
+
                             $arrresponse = array('status' =>true,'msg'=>'ok');
                         }else{
                             $arrresponse = array('status' =>false,'msg'=>'Usuario Inactivo');

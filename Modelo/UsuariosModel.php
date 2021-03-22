@@ -43,6 +43,7 @@ class UsuariosModel extends Mysql{
         return $request;
     }
 
+
 }
 
 

@@ -15,13 +15,23 @@
           <img src="../../../Residencias_V1/Assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a  class="d-block"><?php print_r($_SESSION['userData']['nombre_usuario'])  ?></a>
+          <a class="d-block"><?php print_r($_SESSION['userData']['nombre_rol'])  ?></a>
         </div>
       </div>
 
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+
+        <?php
+
+        if($_SESSION['userData']['idrol'] == 1){
+         
+        }
+
+
+        ?>
 
           <li class="nav-item">
             <a href="<?php echo BASE_URL.'Usuarios/Home'?>" class="nav-link">
