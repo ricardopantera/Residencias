@@ -5,7 +5,7 @@
         {
            session_start();
            if(empty($_SESSION['login'])){
-               header('Location:'.BASE_URL.'/Login');
+               header('Location:'.BASE_URL.'Login');
            }
             parent::__construct();
             

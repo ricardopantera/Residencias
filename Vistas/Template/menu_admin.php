@@ -24,7 +24,7 @@
 
 
           <li class="nav-item">
-            <a href="<?php BASE_URL.'Usuarios/Home'?>" class="nav-link">
+            <a href="<?php echo BASE_URL.'Usuarios/Home'?>" class="nav-link">
               <i class="nav-icon fas fa-home"></i> 
               <p>
                 Administracion de usuarios
@@ -36,7 +36,7 @@
 
 
           <li class="nav-item">
-            <a href="<?php BASE_URL.'/Logout'?>" class="nav-link">
+            <a href="<?php echo BASE_URL.'/Logout'?>" class="nav-link">
               <i class="nav-icon fas fa-power-off"></i>
               <p>
                 Cerrar sesion
