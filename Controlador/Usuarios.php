@@ -25,7 +25,7 @@
                 </div>';
             }
 
-
+      
 
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
