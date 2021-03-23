@@ -28,6 +28,25 @@ require_once("./Vistas/Template/menu_admin.php");
           <h3 class="card-title">Proyectos</h3>
         </div>
         <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <table class="table table-hover" id="TableProyecto">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                </table>
+            </div>
+
+          </div>
+
+
+
         </div>
       </div>
 
@@ -41,7 +60,7 @@ require_once("./Vistas/Template/menu_admin.php");
     
 </body>
 
-<script src="../../../Residencias_V1/Assets/js/adminUserFunction/UserFunction.js"></script>
+<script src="../../../Residencias_V1/Assets/js/ProyectoFunction/ProyectoFunction.js"></script>
 <script>
   const base_url ="<?php BASE_URL; ?>" 
 </script>
