@@ -29,6 +29,19 @@ class ProyectoModel extends Mysql{
         $request = $this->selectAll($sql);
         return $request;
     }
+
+
+    public function eliminarproyect($id){
+        try{
+            $sql = "DELETE FROM proyecto where id_proyecto ='$id';";
+            $request = $this->delete($sql);
+            return $request;
+        }catch(Exception $ex){
+            return $ex;
+        }
+
+    }
+
 }
 
 

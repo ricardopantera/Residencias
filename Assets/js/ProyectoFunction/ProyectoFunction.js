@@ -149,5 +149,51 @@ function ActualizarProyecto(){
 		});
 	}
 }
+function DeleteProyecto(id_proyecto){
+
+
+	Swal.fire({
+		title: 'Quieres eliminar este proyecto?',
+		text: "No podras revertir los cambios!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Si, Eliminar!'
+	  }).then((result) => {
+		if (result.isConfirmed) {
+
+
+
+			$.ajax({
+				url: base_url+"/Residencias_v1/Proyecto/EliminarProyecto/"+id_proyecto,
+				type: 'GET',
+				success: function(result){
+					var objData = JSON.parse(result);
+					console.log(objData)
+					if(objData){
+
+						Swal.fire(
+							'Eliminar!',
+							'Proyecto eliminado correctamente',
+							'success'
+						  )
+						  dataTableGet();
+						
+					}else{
+						Swal.fire(
+							'Atencion',
+							'Ocurrio un error al eliminar el proyecto',
+							'error'
+						  )  
+						  dataTableGet();
+					}
+			  }
+			});
+
+
+		}
+	  })
+}
 
 

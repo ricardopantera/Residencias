@@ -70,6 +70,14 @@ class Proyecto extends Controllers{
             }
         }
 
+
+
+       
+        public function EliminarProyecto($id){
+            $arrdata = $this->model->eliminarproyect($id);
+            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
+        }
     
 }
 
