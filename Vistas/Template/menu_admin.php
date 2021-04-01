@@ -35,9 +35,31 @@
 
           <li class="nav-item">
             <a href="<?php echo BASE_URL.'Usuarios/Home'?>" class="nav-link">
-              <i class="nav-icon fas fa-home"></i> 
+              <i class="nav-icon fas fa-user"></i> 
               <p>
                 Administracion de usuarios
+                
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="<?php echo BASE_URL.'Proyecto/Home'?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i> 
+              <p>
+                Administracion de proyectos
+                
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="<?php echo BASE_URL.'Equipos/Home'?>" class="nav-link">
+              <i class="nav-icon fas fa-users"></i> 
+              <p>
+                Administracion de equipos
                 
               </p>
             </a>

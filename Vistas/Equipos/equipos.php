@@ -38,7 +38,7 @@ require_once("./Vistas/Template/menu_admin.php");
           <div class="row">
             <div class="col-md-12">
 
-                <table class="table table-hover" id="TableEquipos">
+                <table class="table table-hover" id="TableEquipos" style="width:100%">
                   <thead>
                     <tr>
                       <th>ID del equipo</th>
@@ -94,7 +94,7 @@ require_once("./Vistas/Template/menu_admin.php");
           <div class="form-group">
             <label for="">Proyectos disponibles</label>
             <select class="form-control" name="Proyectos" id="Proyectos" required>
-              <option value="">Selecciona un proyecto</option>
+              <option value="null">Selecciona un proyecto</option>
             </select>
           </div>
         </div>      

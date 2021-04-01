@@ -34,7 +34,7 @@ require_once("./Vistas/Template/menu_admin.php");
         </div>
         <br>    
    
-        <table class="table table-hover" id="TableProyecto">
+        <table class="table table-hover" id="TableProyecto" style="width:100%">
                   <thead>
                     <tr>
                       <th>ID</th>

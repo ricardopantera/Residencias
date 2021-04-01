@@ -37,17 +37,17 @@
         
         public function insertEquipo(){
             if($_POST){
-                if(empty($_POST['nombre_equipo']) || empty($_POST['nombre_usuario'] || empty($_POST['nombre_proyecto']))){
+                if(empty($_POST['equipo']) || empty($_POST['usuario'] || empty($_POST['proyecto']))){
                     $arrresponse = array('status' => false,'msg' => 'Error en los datos');
                 }else{
-                    $strEquipo = $_POST['nombre_equipo'];
-                    $strjuez = $_POST['nombre_usuario'];
-                    $strproyecto = $_POST['nombre_proyecto'];
-                    $requestequipo = $this->model->insertEquipo($strEquipo,$strjuez,$strproyecto);
+                    $strEquipo = $_POST['equipo'];
+                    $strjuez = $_POST['usuario'];
+                    $strproyecto = $_POST['proyecto'];
+                    $requestequipo = $this->model->insertEquipo($strEquipo,$strproyecto,$strjuez);
                     if($requestequipo != 0){
-                        $arrresponse = array('status' => true,'msg' => 'Datos guardados correctamente');  
+                        $arrresponse = array('status' => true,'msg' => 'Datos guardados correctamente');   
                     }else{
-                        $arrresponse = array('status' => false,'msg' => 'Error al insertar los datos');  
+                        $arrresponse = array('status' => false,'msg' => 'Error al insertar los datos'); 
                     }
 
                 }

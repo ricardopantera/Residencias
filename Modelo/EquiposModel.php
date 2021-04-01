@@ -14,9 +14,9 @@
 
         
 
-        public function insertEquipo(string $nombre_usuario,string $strjuez,int $strproyecto){
-            $query_insert = "INSERT INTO equipos(nombre_equipo,nombre_usuario,nombre_proyecto) VALUES(?,?,?,1)";
-            $arrdata = array($nombre_usuario,$strjuez,$strproyecto);
+        public function insertEquipo(string $strEquipo,int $strproyecto,int $strjuez){
+            $query_insert = "INSERT INTO equipos (nombre_equipo,id_proyecto,idusuario) VALUES(?,?,?)";
+            $arrdata = array($strEquipo,$strproyecto,$strjuez);
             $request_insert = $this->insert($query_insert,$arrdata);
             return $request_insert;
     

@@ -66,9 +66,9 @@ function EditUser(id_usuario){
 */
 
 function GuardarEquipos(){
-	let equipo =  $("#nombre_equipo").val();
-	let usuario = $("#nombre_usuario").val();
-	let proyecto = $("#nombre_proyecto").val()
+	let equipo =  $("#equipo").val();
+	let usuario = $("#Juez").val();
+	let proyecto = $("#Proyectos").val();
 
 
 	if(equipo == ""){
@@ -78,14 +78,14 @@ function GuardarEquipos(){
             'error'
           )
         return false;
-	}else if(usuario == ""){
+	}else if(usuario == "null"){
 		Swal.fire(
             'Por favor',
             'El campo juez obligatorio',
             'error'
           )
         return false;
-	}else if(proyecto == ""){
+	}else if(proyecto == "null"){
 		Swal.fire(
             'Por favor',
             'El campo  proyecto es obligatorio',
@@ -93,10 +93,12 @@ function GuardarEquipos(){
           )
         return false;
 	}else{
+
+
 		var parametros = {
             "equipo" : equipo,
             "usuario" : usuario,
-			"proyecto":proyecto
+			      "proyecto":proyecto
          }; 
 
         
@@ -105,9 +107,10 @@ function GuardarEquipos(){
             type: 'POST',
             data: parametros,
             success: function(result){
-				var objData = JSON.parse(result);
+            var objData = JSON.parse(result);
+            console.log(result)
                 if(objData.status){
-					Swal.fire(
+				            	Swal.fire(
                         'Exito',
                         objData.msg,
                         'success'
@@ -123,6 +126,7 @@ function GuardarEquipos(){
                 }
           }
 		});
+
 	}
 }
 

@@ -38,7 +38,7 @@ require_once("./Vistas/Template/menu_admin.php");
           <div class="row">
             <div class="col-md-12">
 
-                <table class="table table-hover" id="TableUser">
+                <table class="table table-striped table-bordered dt-responsive nowrap" id="TableUser" style="width:100%">
                   <thead>
                     <tr>
                       <th>ID</th>
