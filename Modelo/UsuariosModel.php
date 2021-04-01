@@ -14,9 +14,9 @@ class UsuariosModel extends Mysql{
         return $request;
     }
 
-    public function InsertUser(string $nombre_usuario,string $password,int $idrol){
+    public function InsertUser(string $strEquipo,string $password,int $idrol){
         $query_insert = "INSERT INTO usuario(nombre_usuario,contraseña,idrol,activo) VALUES(?,?,?,1)";
-        $arrdata = array($nombre_usuario,$password,$idrol);
+        $arrdata = array($strEquipo,$password,$idrol);
         $request_insert = $this->insert($query_insert,$arrdata);
         return $request_insert;
 
