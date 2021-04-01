@@ -12,17 +12,17 @@
             return $request;
         }
 
-        /*
+        
 
         public function insertEquipo(string $nombre_usuario,string $strjuez,int $strproyecto){
-            $query_insert = "INSERT INTO usuario(nombre_equipo,nombre_usuario,nombre_proyecto) VALUES(?,?,?,1)";
+            $query_insert = "INSERT INTO equipos(nombre_equipo,nombre_usuario,nombre_proyecto) VALUES(?,?,?,1)";
             $arrdata = array($nombre_usuario,$strjuez,$strproyecto);
             $request_insert = $this->insert($query_insert,$arrdata);
             return $request_insert;
     
         }
 
-        */
+        
 
         public function ObtenerJuez(){
             $sql = "SELECT a.id_usuario,a.nombre_usuario,b.nombre_rol FROM usuario as a INNER JOIN roles as b on a.idrol = b.id_rol WHERE a.idrol = 2";

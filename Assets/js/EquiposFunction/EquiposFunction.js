@@ -1,8 +1,9 @@
 $(function() {
 
-	dataTableGet();
-  obtenerJuez();
-  obtenerProyectos();
+    dataTableGet();
+    obtenerJuez();
+    obtenerProyectos();
+    
 });
 
 function dataTableGet(){

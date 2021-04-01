@@ -34,7 +34,7 @@
             
         }
 
-        /*
+        
         public function insertEquipo(){
             if($_POST){
                 if(empty($_POST['nombre_equipo']) || empty($_POST['nombre_usuario'] || empty($_POST['nombre_proyecto']))){
@@ -43,8 +43,8 @@
                     $strEquipo = $_POST['nombre_equipo'];
                     $strjuez = $_POST['nombre_usuario'];
                     $strproyecto = $_POST['nombre_proyecto'];
-                    $requestuser = $this->model->insertEquipo($strEquipo,$strjuez,$strproyecto);
-                    if($requestuser != 0){
+                    $requestequipo = $this->model->insertEquipo($strEquipo,$strjuez,$strproyecto);
+                    if($requestequipo != 0){
                         $arrresponse = array('status' => true,'msg' => 'Datos guardados correctamente');  
                     }else{
                         $arrresponse = array('status' => false,'msg' => 'Error al insertar los datos');  
@@ -54,7 +54,7 @@
                 echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
         }
-        */
+        
 
 
         public function ObtenerJuez(){
