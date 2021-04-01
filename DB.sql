@@ -21,16 +21,30 @@ primary key (id_equipos),
 
 
 
-select
-a.id_equipos,
-a.nombre_equipo,
-a.id_proyecto,
-a.idusuario,
-b.nombre_usuario,
-c.nombre_proyecto
-from equipos as a
-inner join usuario as b on a.idusuario = b.id_usuario
-inner join proyecto as c on a.id_proyecto = c.id_proyecto
-where c.id_proyecto = 1
+
+
+
+
+CREATE TABLE `roles` (
+  `id_rol` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre_rol` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+SELECT * FROM db_hik.roles;
+
+
+
+
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(250) DEFAULT NULL,
+  `contraseña` varchar(250) DEFAULT NULL,
+  `idrol` int(10) DEFAULT NULL,
+  `activo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  KEY `FK_roles` (`idrol`),
+  CONSTRAINT `FK_roles` FOREIGN KEY (`idrol`) REFERENCES `roles` (`id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 
