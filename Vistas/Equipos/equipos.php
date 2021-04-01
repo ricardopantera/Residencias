@@ -84,9 +84,7 @@ require_once("./Vistas/Template/menu_admin.php");
           <div class="form-group">
             <label for="">Jueces disponibles</label>
             <select class="form-control" name="Juez" id="Juez" required>
-              <option value="">Selecciona un juez</option>
-              <option value="1">ADMIN</option>
-              <option value="2">JUEZ</option>
+              <option value="null">Selecciona un juez</option>
             </select>
           </div>
         </div>      
@@ -94,11 +92,9 @@ require_once("./Vistas/Template/menu_admin.php");
 
         <div class="col">
           <div class="form-group">
-            <label for="">Equipos disponibles</label>
-            <select class="form-control" name="Equipo" id="Equipo" required>
-              <option value="">Selecciona un equipo</option>
-              <option value="1">ADMIN</option>
-              <option value="2">JUEZ</option>
+            <label for="">Proyectos disponibles</label>
+            <select class="form-control" name="Proyectos" id="Proyectos" required>
+              <option value="">Selecciona un proyecto</option>
             </select>
           </div>
         </div>      

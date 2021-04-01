@@ -1,7 +1,8 @@
 $(function() {
 
 	dataTableGet();
-
+  obtenerJuez();
+  obtenerProyectos();
 });
 
 function dataTableGet(){
@@ -122,6 +123,58 @@ function GuardarEquipos(){
           }
 		});
 	}
+}
+
+
+
+function obtenerJuez(){
+  $.ajax({
+		url: base_url+"/Residencias_v1/Equipos/ObtenerJuez/",
+		type: 'GET',
+		success: function(result){
+			var objData = JSON.parse(result);
+			console.log(objData)
+			if(objData.length > 0){
+        $.each(objData,function(key,value){
+          var string = '<option value="'+value.id_usuario+'">'+value.nombre_usuario+'</option>'
+          $("#Juez").append(string);
+        })
+				
+			}else{
+				Swal.fire(
+					'Atencion',
+					objData.msg,
+					'error'
+				  )  
+			}
+	  }
+	});
+}
+
+
+
+function obtenerProyectos(){
+  $.ajax({
+		url: base_url+"/Residencias_v1/Equipos/ObtenerProyecto/",
+		type: 'GET',
+		success: function(result){
+			var objData = JSON.parse(result);
+			console.log(objData)
+			if(objData.length > 0){
+        $.each(objData,function(key,value){
+          var string = '<option value="'+value.id_proyecto+'">'+value.nombre_proyecto+'</option>'
+          $("#Proyectos").append(string);
+        })
+				
+			}else{
+				Swal.fire(
+					'Atencion',
+					objData.msg,
+					'error'
+				  )  
+			}
+	  }
+	});
 }
 
 

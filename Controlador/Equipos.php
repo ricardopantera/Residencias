@@ -1,12 +1,17 @@
 <?php
     class Equipos extends Controllers{
+
+        
         public function __construct()
         {
+            
            session_start();
            if(empty($_SESSION['login'])){
                header('Location:'.BASE_URL.'Login');
            }
             parent::__construct();
+
+            
             
         }
 
@@ -28,6 +33,8 @@
             die();
             
         }
+
+        /*
         public function insertEquipo(){
             if($_POST){
                 if(empty($_POST['nombre_equipo']) || empty($_POST['nombre_usuario'] || empty($_POST['nombre_proyecto']))){
@@ -47,7 +54,21 @@
                 echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
         }
+        */
 
+
+        public function ObtenerJuez(){
+            $arrjuez = $this->model->ObtenerJuez();
+            echo json_encode($arrjuez,JSON_UNESCAPED_UNICODE);
+            die(); 
+        }
+
+
+        public function ObtenerProyecto(){
+            $arrproyecto = $this->model->ObtenerProyecto();
+            echo json_encode($arrproyecto,JSON_UNESCAPED_UNICODE);
+            die(); 
+        }
 
     }
 
