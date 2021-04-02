@@ -209,7 +209,7 @@ function obtenerJuez(){
         $.each(objData,function(key,value){
           var string = '<option value="'+value.id_usuario+'">'+value.nombre_usuario+'</option>'
           $("#Juez").append(string);
-		  $("#Juez_edit").append(string);
+		      $("#Juez_edit").append(string);
 
         })
 				
