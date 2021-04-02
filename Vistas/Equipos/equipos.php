@@ -111,63 +111,59 @@ require_once("./Vistas/Template/menu_admin.php");
 </div>
 
 
+<!--Modal para editar los equipos-->
 
-
-
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="ModalEdit">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="ModalEditEquipo">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Equipo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form name="formlogin" id="FormLoginId" method="post">
+      <form enctype="multipart/form-data" name="formlogin" id="FormLoginId" method="post">
 
         <div class="col">
           <div class="form-group">
-          <label for="">Usuario</label>
-          <input type="text" id="usuario_edit" name="usuario" class="form-control" placeholder="Nombre del usuario" required>
+          <label for="">Equipo</label>
+          <input type="text" id="equipo_edit" name="equipo" class="form-control" placeholder="Nombre del del equipo" required>
           </div>
-          
-        </div>
-
-        <div class="col">
-          <div class="form-group">
-            <label for="">Contraseña</label>
-            <input type="password" id="password_edit" name="password" class="form-control"  placeholder="Password" required>
           </div>
-        </div>
-
-
+       
         <div class="col">
           <div class="form-group">
-            <label for="">Rol del usuario</label>
-            <select class="form-control" name="Rol_edit" id="Rol_edit" required>
-              <option value="">Seleccionar una opcion</option>
-              <option value="1">ADMIN</option>
-              <option value="2">JUEZ</option>
+            <label for="">Jueces disponibles</label>
+            <select class="form-control" name="Juez" id="Juez_edit" required>
+              <option value="null">Selecciona un juez</option>
             </select>
           </div>
-        </div>
+        </div>      
+
 
         <div class="col">
-            <input type="hidden" id="id_user" name="id_user" class="form-control">
+          <div class="form-group">
+            <label for="">Proyectos disponibles</label>
+            <select class="form-control" name="Proyectos" id="Proyectos_edit" required>
+              <option value="null">Selecciona un proyecto</option>
+            </select>
           </div>
-
+        </div>      
+        <div class="col">
+            <input type="hidden" id="id_equipo" name="id_equipo" class="form-control">
+          </div>
 
       </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-warning" onclick="ActualizarUser()">Actualizar</button>
+        <button type="button" class="btn btn-success" onclick="ActualizarEquipo()">Guardar</button>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

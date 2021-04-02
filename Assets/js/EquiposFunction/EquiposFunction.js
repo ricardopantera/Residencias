@@ -33,8 +33,8 @@ function dataTableGet(){
     });
 }
 
-/*
-function EditUser(id_usuario){
+// consulta del boton por id 
+function EditUser(id_equipos){
 
 	$.ajax({
 		url: base_url+"/Residencias_v1/Equipos/getEquipos/"+id_equipos,
@@ -44,13 +44,15 @@ function EditUser(id_usuario){
 			console.log(objData)
 			if(objData.length > 0){
 				
-				$("#usuario_edit").val(objData[0].nombre_usuario);
-				$("#password_edit").val(objData[0].contraseña);
-				$("#Rol_edit").val(objData[0].idrol);
-				$("#id_user").val(objData[0].id_usuario);
+				$("#equipo_edit").val(objData[0].nombre_equipo);
+				$("#Juez_edit option[value='"+ objData[0].idusuario +"']").attr("selected",true);
+				//$("#Juez_edit").val(objData[0].idusuario);
+				$("#Proyectos_edit").val(objData[0].id_proyecto);
+				$("#id_equipo").val(objData[0].id_equipo);
+				
 
 
-				$('#ModalEdit').modal('show');
+				$('#ModalEditEquipo').modal('show');
 
 				
 			}else{
@@ -63,7 +65,7 @@ function EditUser(id_usuario){
 	  }
 	});
 }
-*/
+
 
 function GuardarEquipos(){
 	let equipo =  $("#equipo").val();
@@ -129,6 +131,69 @@ function GuardarEquipos(){
 
 	}
 }
+function ActualizarEquipo(){
+	let equipo =  $("#equipo_edit").val();
+	let usuario = $("#Juez_edit").val();
+	let proyecto = $("#Proyectos_edit").val();
+	let id = $("#id_equipo").val();
+
+
+
+	if(equipo == ""){
+		Swal.fire(
+            'Por favor',
+            'El equipo es un campo obligatorio',
+            'error'
+          )
+        return false;
+	}else if(usuario == ""){
+		Swal.fire(
+            'Por favor',
+            'El usuario es un campo obligatorio',
+            'error'
+          )
+        return false;
+	}else if(proyecto == ""){
+		Swal.fire(
+            'Por favor',
+            'El campo proyecto es obligatorio',
+            'error'
+          )
+        return false;
+	}else{
+		var parametros = {
+            "usuario" : equipo,
+            "password" : usuario,
+			"rol":proyecto,
+			"id":id
+         }; 
+
+        
+        $.ajax({
+            url: base_url+"/Residencias_v1/Equipos/ActualizarEquipo",
+            type: 'POST',
+            data: parametros,
+            success: function(result){
+				var objData = JSON.parse(result);
+                if(objData.status){
+					Swal.fire(
+                        'Exito',
+                        objData.msg,
+                        'success'
+                      )
+					  $('#ModalEditEquipo').modal('hide');
+					  dataTableGet();
+                }else{
+                    Swal.fire(
+                        'Atencion',
+                        objData.msg,
+                        'error'
+                      )  
+                }
+          }
+		});
+	}
+}
 
 
 
@@ -143,6 +208,8 @@ function obtenerJuez(){
         $.each(objData,function(key,value){
           var string = '<option value="'+value.id_usuario+'">'+value.nombre_usuario+'</option>'
           $("#Juez").append(string);
+		  $("#Juez_edit").append(string);
+
         })
 				
 			}else{
@@ -169,6 +236,7 @@ function obtenerProyectos(){
         $.each(objData,function(key,value){
           var string = '<option value="'+value.id_proyecto+'">'+value.nombre_proyecto+'</option>'
           $("#Proyectos").append(string);
+		  $("#Proyectos_edit").append(string);
         })
 				
 			}else{

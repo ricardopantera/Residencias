@@ -33,6 +33,12 @@
             die();
             
         }
+        public function getEquipo($id){
+            $arrdata = $this->model->getEquipo($id);
+            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
+            
+        }
 
         
         public function insertEquipo(){
@@ -55,6 +61,37 @@
             }
         }
         
+
+
+        public function UpdateEquipo(){
+            if($_POST){
+                if(empty($_POST['equipo']) || empty($_POST['usuario']) || empty($_POST['proyecto']) || empty($_POST['id']) ){
+                    $arrresponse = array('status' => false,'msg' => 'Error en los datos');
+                }else{
+                    $strEquipo = $_POST['equipo'];
+                    $strjuez = $_POST['usuario'];
+                    $strproyecto = $_POST['proyecto'];
+                    $strid = $_POST['id'];
+                    $requestequipo = $this->model->insertEquipo($strEquipo,$strproyecto,$strjuez,$strid);
+                    if($requestequipo != 0){
+                        $arrresponse = array('status' => true,'msg' => 'Datos guardados correctamente');   
+                    }else{
+                        $arrresponse = array('status' => false,'msg' => 'Error al insertar los datos'); 
+                    }
+
+                }
+                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
+
+
+
+        }
+
+
+
+
+
+
 
 
         public function ObtenerJuez(){
