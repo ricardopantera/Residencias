@@ -37,7 +37,7 @@ function dataTableGet(){
 function EditUser(id_equipos){
 
 	$.ajax({
-		url: base_url+"/Residencias_v1/Equipos/getEquipos/"+id_equipos,
+		url: base_url+"/Residencias_v1/Equipos/getEquipo/"+id_equipos,
 		type: 'GET',
 		success: function(result){
 			var objData = JSON.parse(result);
@@ -162,9 +162,9 @@ function ActualizarEquipo(){
         return false;
 	}else{
 		var parametros = {
-            "usuario" : equipo,
-            "password" : usuario,
-			"rol":proyecto,
+            "equipo" : equipo,
+            "usuario" : usuario,
+			"proyecto":proyecto,
 			"id":id
          }; 
 
