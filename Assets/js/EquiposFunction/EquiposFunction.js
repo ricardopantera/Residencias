@@ -163,9 +163,9 @@ function ActualizarEquipo(){
         return false;
 	}else{
 		var parametros = {
-            "usuario" : equipo,
-            "password" : usuario,
-            "rol":proyecto,
+            "equipo" : equipo,
+            "usuario" : usuario,
+            "proyecto":proyecto,
             "id":id
          }; 
 
