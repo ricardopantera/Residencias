@@ -72,7 +72,7 @@
                     $strjuez = $_POST['usuario'];
                     $strproyecto = $_POST['proyecto'];
                     $strid = $_POST['id'];
-                    $requestequipo = $this->model->insertEquipo($strEquipo,$strproyecto,$strjuez,$strid);
+                    $requestequipo = $this->model->UpdateEquipo($strEquipo,$strproyecto,$strjuez,$strid);
                     if($requestequipo != 0){
                         $arrresponse = array('status' => true,'msg' => 'Datos guardados correctamente');   
                     }else{

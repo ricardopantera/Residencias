@@ -23,7 +23,7 @@
         }
 
         public function getEquipo($id){
-            $sql = " SELECT a.id_equipos,a.nombre_equipo, b.nombre_usuario, c.nombre_proyecto 
+            $sql = " SELECT a.id_equipos,a.nombre_equipo, b.nombre_usuario, c.nombre_proyecto,a.id_proyecto,a.idusuario 
             FROM equipos as a INNER JOIN usuario as b on a.idusuario = b.id_usuario 
             INNER JOIN proyecto as c on c.id_proyecto = a.id_proyecto where b.idrol =2 and a.id_equipos='$id'  ";
             $request = $this->selectAll($sql);

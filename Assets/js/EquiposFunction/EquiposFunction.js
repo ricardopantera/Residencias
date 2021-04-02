@@ -43,10 +43,11 @@ function EditUser(id_equipos){
 			var objData = JSON.parse(result);
 			console.log(objData)
 			if(objData.length > 0){
+
+        console.log(objData[0].id_usuario)
 				
 				$("#equipo_edit").val(objData[0].nombre_equipo);
-				$("#Juez_edit option[value='"+ objData[0].idusuario +"']").attr("selected",true);
-				//$("#Juez_edit").val(objData[0].idusuario);
+				$("#Juez_edit").val(objData[0].idusuario);
 				$("#Proyectos_edit").val(objData[0].id_proyecto);
 				$("#id_equipo").val(objData[0].id_equipo);
 				
@@ -162,15 +163,15 @@ function ActualizarEquipo(){
         return false;
 	}else{
 		var parametros = {
-            "equipo" : equipo,
-            "usuario" : usuario,
-			"proyecto":proyecto,
-			"id":id
+            "usuario" : equipo,
+            "password" : usuario,
+            "rol":proyecto,
+            "id":id
          }; 
 
         
         $.ajax({
-            url: base_url+"/Residencias_v1/Equipos/ActualizarEquipo",
+            url: base_url+"/Residencias_v1/Equipos/UpdateEquipo",
             type: 'POST',
             data: parametros,
             success: function(result){
