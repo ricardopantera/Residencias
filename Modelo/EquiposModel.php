@@ -36,7 +36,7 @@
        
 
         public function UpdateEquipo(string $nombre_equipo,string $idusuario,int $id_proyecto,int $id){
-            $query_update = "UPDATE equipos SET nombre_equipo = ? ,id_proyecto = ? , idusuario = ?   where id_equipo = '$id'";
+            $query_update = "UPDATE equipos SET nombre_equipo = ? ,id_proyecto = ? , idusuario = ?   where id_equipos = '$id'";
             $arrdata = array($nombre_equipo,$idusuario,$id_proyecto);
             $request_update = $this->update($query_update,$arrdata);
             return $request_update;

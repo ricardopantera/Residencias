@@ -49,7 +49,7 @@ function EditUser(id_equipos){
 				$("#equipo_edit").val(objData[0].nombre_equipo);
 				$("#Juez_edit").val(objData[0].idusuario);
 				$("#Proyectos_edit").val(objData[0].id_proyecto);
-				$("#id_equipo").val(objData[0].id_equipo);
+				$("#id_equipo").val(objData[0].id_equipos);
 				
 
 
