@@ -20,6 +20,24 @@ primary key (id_equipos),
 );
 
 
+CREATE TABLE `usuario` (
+  `id_usuario` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(250) DEFAULT NULL,
+  `contraseña` varchar(250) DEFAULT NULL,
+  `idrol` int(10) DEFAULT NULL,
+  `activo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  KEY `FK_roles` (`idrol`),
+  CONSTRAINT `FK_roles` FOREIGN KEY (`idrol`) REFERENCES `roles` (`id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
+
+
+
 
 
 
@@ -36,15 +54,27 @@ SELECT * FROM db_hik.roles;
 
 
 
-CREATE TABLE `usuario` (
-  `id_usuario` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre_usuario` varchar(250) DEFAULT NULL,
-  `contraseña` varchar(250) DEFAULT NULL,
-  `idrol` int(10) DEFAULT NULL,
-  `activo` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`),
-  KEY `FK_roles` (`idrol`),
-  CONSTRAINT `FK_roles` FOREIGN KEY (`idrol`) REFERENCES `roles` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+
+/*tabla de equipos*/
+
+create table equipo (
+id_equipo int (10) auto_increment,
+nombre_equipo varchar(250),
+primary key (id_equipo)
+);
+
+/*tabla de preguntas*/
+create table preguntas(
+id_pregunta int(10) auto_increment,
+valor_pregunta int(100),
+primary key (id_pregunta)
+);
+
+
+/*tabla de aspectos */
+
+
+
+
 
 
