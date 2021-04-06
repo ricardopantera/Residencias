@@ -13,7 +13,7 @@ require_once("./Vistas/Template/menu_admin.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Administracion de proyectos</h1>
+            <h1>Administracion de equipos</h1>
           </div>
 
         </div>
@@ -24,7 +24,7 @@ require_once("./Vistas/Template/menu_admin.php");
 
     <div class="card">
         <div class="card-header">
-        <h3 class="card-title">Proyectos</h3>
+        <h3 class="card-title">Equipos</h3>
         </div>
         <div class="card-body">
         <div class="row">
@@ -34,11 +34,11 @@ require_once("./Vistas/Template/menu_admin.php");
         </div>
         <br>    
    
-        <table class="table table-hover" id="TableProyecto" style="width:100%">
+        <table class="table table-hover" id="TableEquipo" style="width:100%">
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Nombre</th>
+                      <th>Nombre del Equipo</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
@@ -54,11 +54,11 @@ require_once("./Vistas/Template/menu_admin.php");
 
     </section>
     
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="ModalProyecto">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="ModalEquipo">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar Proyecto</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Equipo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -68,8 +68,8 @@ require_once("./Vistas/Template/menu_admin.php");
 
         <div class="col">
           <div class="form-group">
-          <label for="">Proyecto</label>
-          <input type="text" id="proyecto" name="proyecto" class="form-control" placeholder="Nombre del proyecto" required>
+          <label for="">Equipo</label>
+          <input type="text" id="equipo" name="equipo" class="form-control" placeholder="Nombre del equipo" required>
           </div>
           
         </div>   
@@ -78,7 +78,7 @@ require_once("./Vistas/Template/menu_admin.php");
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-success" onclick="GuardarProyecto()">Guardar</button>
+        <button type="button" class="btn btn-success" onclick="GuardarEquipo()">Guardar</button>
       </div>
     </div>
   </div>
@@ -88,7 +88,7 @@ require_once("./Vistas/Template/menu_admin.php");
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Proyecto</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Equipo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -98,17 +98,17 @@ require_once("./Vistas/Template/menu_admin.php");
 
         <div class="col">
           <div class="form-group">
-          <label for="">Proyecto</label>
-          <input type="text" id="Proyecto_edit" name="Proyecto_edit" class="form-control" placeholder="Nombre del proyecto" required>
+          <label for="">Equipo</label>
+          <input type="text" id="Equipo_edit" name="Equipo_edit" class="form-control" placeholder="Nombre del Equipo" required>
           </div>
           </form>
       </div>
       <div class="col">
-            <input type="hidden" id="id_proyecto" name="id_proyecto" class="form-control">
+            <input type="hidden" id="id_equipo" name="id_equipo" class="form-control">
           </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-warning" onclick="ActualizarProyecto()">Actualizar</button>
+        <button type="button" class="btn btn-warning" onclick="ActualizarEquipo()">Actualizar</button>
         
       </div>
     </div>
@@ -129,7 +129,7 @@ require_once("./Vistas/Template/menu_admin.php");
     
 </body>
 
-<script src="../../../Residencias_V1/Assets/js/ProyectoFunction/ProyectoFunction.js"></script>
+<script src="../../../Residencias_V1/Assets/js/CrearEquiposFunction/CrearEquiposFunction.js"></script>
 <script>
   const base_url ="<?php BASE_URL; ?>" 
 </script>

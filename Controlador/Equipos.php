@@ -25,7 +25,7 @@
             for($i=0;$i < count($arrdata); $i++){
                 $arrdata[$i]['options'] = '<div class="text-center">
                 <button class="btn btn-warning" onclick="EditUser('.$arrdata[$i]['id_equipos'].')"><i class="fas fa-pencil-alt"></i></button>
-                <button class="btn btn-danger" onclick="DeleteUser('.$arrdata[$i]['id_equipos'].')"><i class="fas fa-trash-alt"></i></button>
+                <button class="btn btn-danger" onclick="Eliminarequipo('.$arrdata[$i]['id_equipos'].')"><i class="fas fa-trash-alt"></i></button>
                 </div>';
             }   
 
@@ -105,6 +105,14 @@
             $arrproyecto = $this->model->ObtenerProyecto();
             echo json_encode($arrproyecto,JSON_UNESCAPED_UNICODE);
             die(); 
+        }
+
+
+
+        public function EliminarEquipo($id){
+            $arrdata = $this->model->eliminarequipo($id);
+            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
         }
 
     }

@@ -198,6 +198,56 @@ function ActualizarEquipo(){
 
 
 
+function Eliminarequipo(id_equipo){
+
+
+	Swal.fire({
+		title: 'Quieres eliminar a este equipo?',
+		text: "No podras revertir los cambios!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Si, Eliminar!'
+	  }).then((result) => {
+		if (result.isConfirmed) {
+
+
+
+			$.ajax({
+				url: base_url+"/Residencias_v1/Equipos/EliminarEquipo/"+id_equipo,
+				type: 'GET',
+				success: function(result){
+					var objData = JSON.parse(result);
+					console.log(objData)
+					if(objData){
+
+						Swal.fire(
+							'Eliminar!',
+							'Equipo eliminado correctamente',
+							'success'
+						  )
+						  dataTableGet();
+						
+					}else{
+						Swal.fire(
+							'Atencion',
+							'Ocurrio un error al eliminar el usuario',
+							'error'
+						  )  
+						  dataTableGet();
+					}
+			  }
+			});
+
+
+		}
+	  })
+}
+
+
+
+
 function obtenerJuez(){
   $.ajax({
 		url: base_url+"/Residencias_v1/Equipos/ObtenerJuez/",

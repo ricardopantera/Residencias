@@ -13,9 +13,8 @@ require_once("./Vistas/Template/menu_admin.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Asignacion de equipos a proyectos</h1>
+            <h1>Bienvenido Juez</h1>
           </div>
-
         </div>
       </div>
     </section>
@@ -25,7 +24,7 @@ require_once("./Vistas/Template/menu_admin.php");
       
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Equipos</h3>
+          <h3 class="card-title">Equipos a evaluar</h3>
         </div>
         <div class="card-body">
         <div class="row">
@@ -35,24 +34,7 @@ require_once("./Vistas/Template/menu_admin.php");
         </div>
         <br>
         
-          <div class="row">
-            <div class="col-md-12">
-
-                <table class="table table-hover" id="TableEquipos" style="width:100%">
-                  <thead>
-                    <tr>
-                      <th>ID del equipo</th>
-                      <th>Nombre del equipo</th>
-                      <th>Nombre del juez</th>
-                      <th>Nombre del proyecto</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                </table>
-            </div>
-          </div>
-        </div>
-      </div>
+       
 
     </section>
 
